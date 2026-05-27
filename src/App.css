@@ -1,0 +1,46 @@
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #111;
+}
+
+.navbar h2 {
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: orange;
+} */
+ /* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 15px 30px;
+}
+
+.navbar h2 {
+  color: white;
+}
+
+.navbar div {
+  display: flex;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: orange;
+}
+ */

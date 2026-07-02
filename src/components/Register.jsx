@@ -33,7 +33,6 @@ function Register() {
       <div style={styles.card}>
         <div style={styles.iconWrap}>📝</div>
         <h2 style={styles.title}>Create account</h2>
-        <p style={styles.subtitle}>Join WebDemo today</p>
         {error && <div style={styles.error}>⚠️ {error}</div>}
         {success && <div style={styles.success}>✅ {success}</div>}
         <div style={styles.field}>

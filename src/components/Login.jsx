@@ -28,7 +28,6 @@ function Login() {
       <div style={styles.card}>
         <div style={styles.iconWrap}>⚡</div>
         <h2 style={styles.title}>Welcome back</h2>
-        <p style={styles.subtitle}>Login to your WebDemo account</p>
         {error && <div style={styles.error}>⚠️ {error}</div>}
         <form onSubmit={handleLogin}>
           <div style={styles.field}>

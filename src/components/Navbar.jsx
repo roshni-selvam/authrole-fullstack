@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
-        <Link to="/" style={styles.logo}>⚡ WebDemo</Link>
+        <Link to="/" style={styles.logo}> AuthRole</Link>
         <div style={styles.navLinks}>
           <Link to="/" style={styles.link}>Home</Link>
           {isAuthenticated() && hasRole(['USER', 'ADMIN']) && (

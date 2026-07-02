@@ -7,8 +7,8 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.hero}>
-        <div style={styles.badge}>🚀 Full Stack Auth System</div>
-        <h1 style={styles.title}>Welcome to <span style={styles.highlight}>WebDemo</span></h1>
+        <div style={styles.badge}> Full Stack Auth System</div>
+        <h1 style={styles.title}>Welcome to <span style={styles.highlight}>AuthRole</span></h1>
         <p style={styles.subtitle}>
           Secure authentication with role-based access control powered by Spring Boot + React + JWT
         </p>

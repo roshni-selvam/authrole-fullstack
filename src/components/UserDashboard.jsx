@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
+
 function UserDashboard() {
   const { user, getAuthHeader } = useAuth();
+  const API_URL = import.meta.env.VITE_API_URL;
   const [message, setMessage] = useState('');
 
   useEffect(() => { fetchUserData(); }, []);
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/user/hello', getAuthHeader());
+      const response = await axios.get(`${API_URL}/api/user/hello`, getAuthHeader());
       setMessage(response.data.message);
     } catch (error) {
       console.error('Error:', error);

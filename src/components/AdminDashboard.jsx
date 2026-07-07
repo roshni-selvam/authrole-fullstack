@@ -4,8 +4,8 @@ import { useAuth } from '../context/AuthContext';
 
 function AdminDashboard() {
   const { user, getAuthHeader } = useAuth();
+  const API_URL = import.meta.env.VITE_API_URL;
   const [users, setUsers] = useState([]);
-  const [message, setMessage] = useState('');
 
   useEffect(() => {
     fetchAdminData();
@@ -14,14 +14,14 @@ function AdminDashboard() {
 
   const fetchAdminData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/hello', getAuthHeader());
+      const response = await axios.get(`${API_URL}/api/admin/hello`, getAuthHeader());
       setMessage(response.data.message);
     } catch (error) { console.error('Error:', error); }
   };
 
   const fetchAllUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/all-users', getAuthHeader());
+      const response = await axios.get(`${API_URL}/api/admin/all-users`, getAuthHeader());
       setUsers(response.data);
     } catch (error) { console.error('Error:', error); }
   };
@@ -29,7 +29,7 @@ function AdminDashboard() {
   const deleteUser = async (userId) => {
     if (window.confirm('Are you sure?')) {
       try {
-        await axios.delete(`http://localhost:8080/api/admin/delete-user/${userId}`, getAuthHeader());
+        await axios.delete(`${API_URL}/api/admin/delete-user/${userId}`, getAuthHeader());
         fetchAllUsers();
       } catch (error) { console.error('Error:', error); }
     }
@@ -39,7 +39,7 @@ function AdminDashboard() {
     const newRole = currentRole === 'ADMIN' ? 'USER' : 'ADMIN';
     if (window.confirm(`Change role to ${newRole}?`)) {
       try {
-        await axios.put(`http://localhost:8080/api/admin/update-role/${userId}`, { role: newRole }, getAuthHeader());
+       await axios.put(`${API_URL}/api/admin/update-role/${userId}`, { role: newRole }, getAuthHeader());
         fetchAllUsers();
       } catch (error) { console.error('Error:', error); }
     }

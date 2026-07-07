@@ -15,10 +15,11 @@ export const AuthProvider = ({ children }) => {
     }
     setLoading(false);
   }, []);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/login', {
+      const response = await axios.post(`${API_URL}/api/login`, {
         username,
         password
       });

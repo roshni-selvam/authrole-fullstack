@@ -103,8 +103,10 @@ function AdminDashboard() {
                   </td>
                   <td style={styles.td}>
                     <div style={styles.userCell}>
-                      <div style={styles.miniAvatar}>{u.username.charAt(0).toUpperCase()}</div>
-                      <span style={styles.username}>{u.username}</span>
+                      <div style={styles.miniAvatar}>
+                      {u.username ? u.username.charAt(0).toUpperCase() : '?'}
+                    </div>
+                    <span style={styles.username}>{u.username || 'Unknown'}</span>
                     </div>
                   </td>
                   <td style={styles.td}>

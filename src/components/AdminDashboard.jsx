@@ -6,6 +6,7 @@ function AdminDashboard() {
   const { user, getAuthHeader } = useAuth();
   const API_URL = import.meta.env.VITE_API_URL;
   const [users, setUsers] = useState([]);
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     fetchAdminData();

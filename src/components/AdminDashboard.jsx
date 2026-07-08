@@ -96,39 +96,42 @@ function AdminDashboard() {
               </tr>
             </thead>
             <tbody>
-              {users.map((u, i) => (
-                <tr key={u.id} style={{...styles.tr, background: i % 2 === 0 ? 'white' : '#f8fafc'}}>
-                  <td style={styles.td}>
-                    <span style={styles.idBadge}>#{u.id}</span>
-                  </td>
-                  <td style={styles.td}>
-                    <div style={styles.userCell}>
-                      <div style={styles.miniAvatar}>
-                      {u.username ? u.username.charAt(0).toUpperCase() : '?'}
-                    </div>
-                    <span style={styles.username}>{u.username || 'Unknown'}</span>
-                    </div>
-                  </td>
-                  <td style={styles.td}>
-                    <span style={u.role === 'ADMIN' ? styles.adminRole : styles.userRole}>
-                      {u.role === 'ADMIN' ? '👑' : '👤'} {u.role}
-                    </span>
-                  </td>
-                  <td style={styles.td}>
-                    {u.username !== 'admin' && (
-                      <button onClick={() => updateRole(u.id, u.role)} style={u.role === 'ADMIN' ? styles.demoteBtn : styles.promoteBtn}>
-                        {u.role === 'ADMIN' ? '↓ Make USER' : '↑ Make ADMIN'}
-                      </button>
-                    )}
-                  </td>
-                  <td style={styles.td}>
-                    {u.username !== 'admin' && (
-                      <button onClick={() => deleteUser(u.id)} style={styles.deleteBtn}>🗑 Delete</button>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+             {users.map((u, i) => (
+             <tr key={u.id} style={{...styles.tr, background: i % 2 === 0 ? 'white' : '#f8fafc'}}>
+               <td style={styles.td}>
+        <span style={styles.idBadge}>#{u.id}</span>
+      </td>
+      <td style={styles.td}>
+        <div style={styles.userCell}>
+          <div style={styles.miniAvatar}>
+            {u.username ? u.username.charAt(0).toUpperCase() : '?'}
+          </div>
+          <span style={styles.username}>{u.username || 'Unknown'}</span>
+        </div>
+      </td>
+      {/* Role Column */}
+      <td style={styles.td}>
+        <span style={u.role === 'ADMIN' ? styles.adminRole : styles.userRole}>
+          {u.role === 'ADMIN' ? '👑' : '👤'} {u.role}
+        </span>
+      </td>
+      {/* Edit Role Column */}
+      <td style={styles.td}>
+        {u.username !== 'admin' && (
+          <button onClick={() => updateRole(u.id, u.role)} style={u.role === 'ADMIN' ? styles.demoteBtn : styles.promoteBtn}>
+            {u.role === 'ADMIN' ? '↓ Make USER' : '↑ Make ADMIN'}
+          </button>
+        )}
+      </td>
+      {/* Delete Column */}
+      <td style={styles.td}>
+        {u.username !== 'admin' && (
+          <button onClick={() => deleteUser(u.id)} style={styles.deleteBtn}>🗑 Delete</button>
+        )}
+      </td>
+    </tr>
+  ))}
+</tbody>
           </table>
         </div>
       </div>

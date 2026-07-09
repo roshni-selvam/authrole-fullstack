@@ -79,10 +79,7 @@ function AdminDashboard() {
           <span style={styles.messageDot}></span>
           <p style={styles.messageText}>{message || 'Loading...'}</p>
         </div>
-        <div style={{ padding: '20px', background: '#eee', marginBottom: '10px' }}>
-             Debug: Total Users in State = {users.length}
-           </div>
-
+      
         <div style={styles.tableCard}>
           <h2 style={styles.tableTitle}>All Users</h2>
           <table style={styles.table}>
